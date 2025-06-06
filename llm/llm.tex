@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+% \usepackage{styles} 
+\usepackage{enumitem}
+% \usepackage{pdflscape}
+
+%% GENERAL
+\usepackage[utf8]{inputenc}
+\usepackage{nameref}         % Name referneces
+
+%% PAGE CONFIGURATION
+\usepackage[margin=2.5cm]{geometry}
+
+
+%% LANGUAGE
+\usepackage[english]{babel}
+
+
+%% BIBLIOGRAPHIC REFERENCES
+\usepackage{csquotes}
+\usepackage[style=numeric, sorting=none]{biblatex}
+\bibliography{references}
+
+
+%% MATH
+\usepackage{amsmath}  % Math
+
+
+%% IMAGES
+\usepackage{graphicx}  % To insert images
+%\usepackage{svg}      % SVG files
+
+
+%% STYLES
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor=black,  
+    urlcolor=blue,
+    citecolor=blue
+}
+
+
+%% TODOs
+\setlength {\marginparwidth}{2cm} 
+% \usepackage{todonotes}             % TODOs
+\usepackage{comment}
+
+\usepackage{float}
+\usepackage{booktabs}
+
+
+\begin{document}
+\author{Bruno Sánchez Gómez}
+\date{\today}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \bfseries MBM Essay 2: LLM \par}
+    \vspace{2cm}
+    {\Large {\Huge Interpretability in Deep Networks \& Reverse-Engineering Brain Mechanisms} \par}
+    \vspace{8cm}
+    {\large \textbf{Bruno Sánchez Gómez} \par}
+    \vfill
+    {\large \today \par}
+\end{titlepage}
+
+Hi
+
+% Latex snipet examples
+%\include{examples}
+
+\clearpage
+\printbibliography%[title=References]
+
+\end{document}
