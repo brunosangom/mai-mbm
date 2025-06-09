@@ -107,8 +107,6 @@ SHORTLIST OF TOPICS:
 
 ## **Relevant Sources**
 
-This list includes a mix of historical papers, review articles, and recent primary research to support the essay's arguments.
-
 **Historical and Foundational**
 
 * **McCulloch, W. S., & Pitts, W. (1943).** A logical calculus of the ideas immanent in nervous activity. *The bulletin of mathematical biophysics, 5*(4), 115-133.
