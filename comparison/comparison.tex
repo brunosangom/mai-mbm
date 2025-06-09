@@ -1,36 +1,13 @@
 \documentclass[11pt,a4paper]{article}
-% \usepackage{styles} 
 \usepackage{enumitem}
-% \usepackage{pdflscape}
-
-%% GENERAL
 \usepackage[utf8]{inputenc}
-\usepackage{nameref}         % Name referneces
-
-%% PAGE CONFIGURATION
+\usepackage{nameref}
 \usepackage[margin=2.5cm]{geometry}
-
-
-%% LANGUAGE
 \usepackage[english]{babel}
-
-
-%% BIBLIOGRAPHIC REFERENCES
 \usepackage{csquotes}
 \usepackage[style=numeric, sorting=none]{biblatex}
-\bibliography{references}
-
-
-%% MATH
-\usepackage{amsmath}  % Math
-
-
-%% IMAGES
-\usepackage{graphicx}  % To insert images
-%\usepackage{svg}      % SVG files
-
-
-%% STYLES
+\usepackage{amsmath}
+\usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \hypersetup{
     colorlinks,
@@ -38,25 +15,22 @@
     urlcolor=blue,
     citecolor=blue
 }
-
-
-%% TODOs
-\setlength {\marginparwidth}{2cm} 
-% \usepackage{todonotes}             % TODOs
+\setlength{\marginparwidth}{2cm}
 \usepackage{comment}
-
 \usepackage{float}
 \usepackage{booktabs}
 
-
-\begin{document}
+\bibliography{references}
 \author{Bruno Sánchez Gómez}
 \date{\today}
+
+
+\begin{document}
 
 \begin{titlepage}
     \centering
     \vspace*{2cm}
-    {\Huge \bfseries MBM Essay 1: Human \par}
+    {\Huge \bfseries MBM Essay 3: Comparison \par}
     \vspace{2cm}
     {\Large {\Huge Reverse-Engineering Brain Mechanisms through Interpretable Neural Networks} \par}
     \vspace{8cm}
@@ -67,10 +41,8 @@
 
 Hi
 
-% Latex snipet examples
-%\include{examples}
-
 \clearpage
+\nocite{*}
 \printbibliography%[title=References]
 
 \end{document}
