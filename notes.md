@@ -146,3 +146,17 @@ SHORTLIST OF TOPICS:
 * **Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le, Q., & Zhou, D. (2022).** Chain of thought prompting elicits reasoning in large language models. *arXiv preprint arXiv:2201.11903.*
 * **Binz, M., & Schulz, E. (2023).** Using cognitive psychology to understand large language models. *Nature Reviews Psychology, 2*(7), 385-386.*
 * **Mahowald, K., Ivanova, A. A., Blank, I. A., Kanwisher, N., Tenenbaum, J. B., & Fedorenko, E. (2023).** Dissociating language and thought in large language models: a cognitive perspective. *arXiv preprint arXiv:2301.06627.*
+
+# TODOs
+
+[ ] XAI Taxonomy Table
+[ ] Add figures
+  [ ] First artificial neuron
+  [ ] Perceptron?
+  [ ] Back-propagation?
+  [ ] MLP?
+  [ ] CNN?
+  [ ] RNN?
+  [ ] XAI Taxonomy?
+  [ ] Saliency Maps?
+  [ ] LIME/SHAP?
