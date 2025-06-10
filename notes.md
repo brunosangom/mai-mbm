@@ -150,12 +150,12 @@ SHORTLIST OF TOPICS:
 # TODOs
 
 [x] XAI Taxonomy Table
-[ ] Add figures
+[x] Add figures
   [x] First artificial neuron
-  [x] Back-propagation?
-  [ ] MLP
-  [x] CNN?
-  [x] RNN?
-  [ ] XAI Taxonomy?
-  [ ] Saliency Maps?
-  [ ] LIME/SHAP?
+  [x] Back-propagation
+  [x] MLP
+  [x] CNN
+  [x] RNN
+  [x] SHAP
+  [x] LIME
+  [x] Saliency Maps

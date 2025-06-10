@@ -16,17 +16,38 @@ Feature Attribution Methods aim to identify which parts of the input data a mode
     \item \textbf{SHAP (SHapley Additive exPlanations)} draws from cooperative game theory, specifically Shapley values, to assign a unique contribution value to each feature for a given prediction, providing a unified and theoretically grounded framework for feature importance \cite{lundberg2017unified}. This method is valuable because it can be applied to virtually any model and help study the reasoning behind individual predictions, which is crucial when trying to understand if an AI model's strategy bears any resemblance to neural computation.
 \end{itemize}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/shap.png}
+    \caption{Example of SHAP values applied to a model's prediction. The plot shows the contribution of each feature to the final prediction. Positive contributions push the prediction higher, while negative contributions lower it. This visualization helps in understanding how different input features influence the model's decision-making process (\href{https://shap.readthedocs.io/}{link to illustration source}).}
+    \label{fig:shap_example}
+\end{figure}
+
 \subsection{Model Simplification}
 Model Simplification techniques aim to make complex models more understandable by approximating them with simpler, inherently interpretable models.
 \begin{itemize}
     \item \textbf{LIME (Local Interpretable Model-agnostic Explanations)} operates by training a simpler, interpretable model (e.g., a linear model or a decision tree) to approximate the behavior of the complex black-box model in the local vicinity of a particular instance being explained \cite{ribeiro2016why}. The goal is to create a proxy that is easier to analyze and understand, yet faithfully mimics the input-output relationships of the complex model. This provides a local, understandable rationale for a specific prediction without requiring insight into the global structure of the original model. By studying the structure and parameters of the surrogate model, researchers can gain insights into the decision-making logic of the original system. For instance, a decision tree surrogate can reveal the most influential features and the interaction rules that the black-box model has learned, providing a more holistic view than local attribution methods.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/lime.png}
+    \caption{LIME process explained (\href{https://medium.com/data-science/lime-explain-machine-learning-predictions-af8f18189bfe}{link to illustration source}).}
+    \label{fig:lime_example}
+\end{figure}
+
 \subsection{Visual Explanations}
 Visual Explanations provide graphical representations of a model's decision-making process, often highlighting important input features.
 \begin{itemize}
     \item \textbf{Saliency Maps} are a common visual explanation technique, particularly in computer vision. They generate heatmaps that highlight the pixels in an input image that most significantly influence the model's output for a given class \cite{fong2017interpretable}. Typically, these are computed by examining the gradient of the output prediction score with respect to the input pixel values. For neuroscientists, saliency maps can offer a visual hypothesis about which features a model, trained to mimic a sensory processing task, might be using, analogous to how one might study receptive fields in biological neurons. Another type of visual explanation related to saliency maps are \textbf{Attention Maps}, which are often used in models with attention mechanisms (e.g., Transformers) to visualize which parts of the input the model focuses on, or how different internal elements of the model relate to each other, thus allowing us to observe the internal relationships within the model.
 \end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/saliency_maps.jpg}
+    \caption{Examples of saliency maps. The highlighted areas indicate which parts of the images were most influential in the model's predictions (\href{https://www.geeksforgeeks.org/what-is-saliency-map/}{link to illustration source}).}
+    \label{fig:saliency_example}
+\end{figure}
 
 \subsection{Model-based Interpretations}
 Model-based Interpretation techniques focus on understanding the internal mechanisms and learned representations within the network itself.
@@ -36,7 +57,7 @@ Model-based Interpretation techniques focus on understanding the internal mechan
 
 These various XAI approaches are not mutually exclusive and are often used in combination to build a more comprehensive understanding of how complex AI models operate, thereby offering a richer set of tools for comparison with, and generation of hypotheses about, the brain.
 
-\begin{table}[H]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.45\textwidth}|}
         \hline
