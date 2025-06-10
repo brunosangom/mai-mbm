@@ -8,21 +8,65 @@ This \textit{black box} characteristic poses a particular impediment when these 
 
 \section{A Taxonomy of Explainable AI Methods}\label{sec:XAI-tax}
 
-To address the opacity of Deep Learning models, the field of \textbf{Explainable AI} (XAI) has emerged, offering a diverse variety of methods to take a look inside the \textit{black box} \cite{doshi2017towards, miller2019explanation}. A primary distinction in XAI methodologies lies between \textit{post-hoc interpretability techniques}, which are applied to already trained models, and \textit{intrinsically explainable models}, which are designed for transparency from the ground up. While some models like linear regression or decision trees are inherently interpretable due to their simple structure, the complex, highly non-linear nature of deep neural networks means they seldom fall into this category. Consequently, much of XAI research focuses on post-hoc methods to analyze these powerful but opaque systems \cite{doshi2017towards}.
+To address the opacity of Deep Learning models, the field of \textbf{Explainable AI} (XAI) has emerged, offering a diverse variety of methods to take a look inside the \textit{black box} \cite{doshi2017towards, miller2019explanation}. A primary distinction in XAI methodologies lies between \textit{post-hoc interpretability techniques}, which are applied to already trained models, and \textit{intrinsically explainable models}, which are designed for transparency from the ground up. While some models like linear regression or decision trees are inherently interpretable due to their simple structure, the complex, highly non-linear nature of deep neural networks means they seldom fall into this category. Consequently, much of XAI research focuses on post-hoc methods to analyze these powerful but opaque systems \cite{doshi2017towards}. This section outlines four main categories of post-hoc XAI techniques:
 
-One prominent category of post-hoc XAI techniques comprises \textbf{Feature Attribution Methods}. These methods aim to identify which parts of the input data a model deems most important when making a specific prediction.
+\subsection{Feature Attribution Methods}
+Feature Attribution Methods aim to identify which parts of the input data a model deems most important when making a specific prediction.
 \begin{itemize}
-    \item \textbf{Saliency Maps} are a common feature attribution technique, particularly in computer vision. They generate heatmaps that highlight the pixels in an input image that most significantly influence the model's output for a given class \cite{fong2017interpretable}. Typically, these are computed by examining the gradient of the output prediction score with respect to the input pixel values. For neuroscientists, saliency maps can offer a visual hypothesis about which features a model, trained to mimic a sensory processing task, might be using, analogous to how one might study receptive fields in biological neurons.
-    \item \textbf{LIME (Local Interpretable Model-agnostic Explanations)} and \textbf{SHAP (SHapley Additive exPlanations)} offer more sophisticated approaches to feature attribution. LIME operates by training a simpler, interpretable model (e.g., a linear model or a decision tree) to approximate the behavior of the complex black-box model in the local vicinity of a particular instance being explained \cite{ribeiro2016why}. This provides a local, understandable rationale for a specific prediction without requiring insight into the global structure of the original model. SHAP, on the other hand, draws from cooperative game theory, specifically Shapley values, to assign a unique contribution value to each feature for a given prediction, providing a unified and theoretically grounded framework for feature importance \cite{lundberg2017unified}. These methods are valuable because they can be applied to virtually any model (model-agnostic) and help study the reasoning behind individual predictions, which is crucial when trying to understand if an AI model's strategy bears any resemblance to neural computation.
+    \item \textbf{SHAP (SHapley Additive exPlanations)} draws from cooperative game theory, specifically Shapley values, to assign a unique contribution value to each feature for a given prediction, providing a unified and theoretically grounded framework for feature importance \cite{lundberg2017unified}. This method is valuable because it can be applied to virtually any model and help study the reasoning behind individual predictions, which is crucial when trying to understand if an AI model's strategy bears any resemblance to neural computation.
 \end{itemize}
 
-Beyond attributing importance to input features, another class of XAI techniques focuses on \textbf{Model-based Interpretation}, aiming to understand the internal mechanisms and learned representations within the network itself.
+\subsection{Model Simplification}
+Model Simplification techniques aim to make complex models more understandable by approximating them with simpler, inherently interpretable models.
 \begin{itemize}
-    \item \textbf{Analyzing Network Activations and Representations} involves directly inspecting the internal state of the network. This can include visualizing the activation patterns of individual neurons or entire layers in response to different inputs, or using techniques like feature visualization, which attempts to synthesize an input that maximally activates a specific neuron or feature detector within the network \cite{olah2018building}. Such methods allow researchers to probe what kinds of information are encoded at different stages of processing. For instance, the hierarchical features that CNNs learn when trained on image recognition, as we mentioned in Section~\ref{sec:2000s}~\cite{yamins2016using}. Other tools, like Network Dissection~\cite{bau2017network}, aim to quantify the interpretability of individual units by identifying the semantic concepts (e.g., 'door', 'sky') that they detect.
-
-    \item \textbf{Ablation Studies} in artificial neural networks are directly inspired by lesion studies in Neuroscience. These methods involve systematically perturbing the model (for example, by desactivating specific artificial neurons, connections, or entire layers) and then observing the impact on the model's behavior or internal representations \cite{kriegeskorte2018cognitive}. If silencing a particular component significantly degrades performance on a specific task, it suggests that this component plays a crutial role in that computation. Such ``in silico lesioning'' can help to map functional roles to different parts of the network, providing testable hypotheses about the functional specialization of the different regions of the network.
+    \item \textbf{LIME (Local Interpretable Model-agnostic Explanations)} operates by training a simpler, interpretable model (e.g., a linear model or a decision tree) to approximate the behavior of the complex black-box model in the local vicinity of a particular instance being explained \cite{ribeiro2016why}. The goal is to create a proxy that is easier to analyze and understand, yet faithfully mimics the input-output relationships of the complex model. This provides a local, understandable rationale for a specific prediction without requiring insight into the global structure of the original model. By studying the structure and parameters of the surrogate model, researchers can gain insights into the decision-making logic of the original system. For instance, a decision tree surrogate can reveal the most influential features and the interaction rules that the black-box model has learned, providing a more holistic view than local attribution methods.
 \end{itemize}
+
+\subsection{Visual Explanations}
+Visual Explanations provide graphical representations of a model's decision-making process, often highlighting important input features.
+\begin{itemize}
+    \item \textbf{Saliency Maps} are a common visual explanation technique, particularly in computer vision. They generate heatmaps that highlight the pixels in an input image that most significantly influence the model's output for a given class \cite{fong2017interpretable}. Typically, these are computed by examining the gradient of the output prediction score with respect to the input pixel values. For neuroscientists, saliency maps can offer a visual hypothesis about which features a model, trained to mimic a sensory processing task, might be using, analogous to how one might study receptive fields in biological neurons. Another type of visual explanation related to saliency maps are \textbf{Attention Maps}, which are often used in models with attention mechanisms (e.g., Transformers) to visualize which parts of the input the model focuses on, or how different internal elements of the model relate to each other, thus allowing us to observe the internal relationships within the model.
+\end{itemize}
+
+\subsection{Model-based Interpretations}
+Model-based Interpretation techniques focus on understanding the internal mechanisms and learned representations within the network itself.
+\begin{itemize}
+    \item \textbf{Ablation Studies} in ANNs are directly inspired by lesion studies in Neuroscience. These methods involve systematically perturbing the model (for example, by desactivating specific artificial neurons, connections, or entire layers) and then observing the impact on the model's behavior or internal representations \cite{kriegeskorte2018cognitive}. If silencing a particular component significantly degrades performance on a specific task, it suggests that this component plays a crutial role in that computation. Such ``in silico lesioning'' can help to map functional roles to different parts of the network, providing testable hypotheses about the functional specialization of the different regions of the network.
+\end{itemize}
+
 These various XAI approaches are not mutually exclusive and are often used in combination to build a more comprehensive understanding of how complex AI models operate, thereby offering a richer set of tools for comparison with, and generation of hypotheses about, the brain.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.45\textwidth}|}
+        \hline
+        \multirow{2}{=}{\textbf{Category}} & \multirow{2}{=}{\textbf{Example}} & \multirow{2}{=}{\textbf{Brief Description}} \\
+        & & \\
+        \hline
+        \multirow{4}{=}{Feature Attribution} & \multirow{4}{=}{SHAP (SHapley Additive exPlanations)} & \multirow{4}{=}{Identify which parts of the input data a model deems most important when making a specific prediction} \\
+        & & \\
+        & & \\
+        & & \\
+        \hline
+        \multirow{5}{=}{Model Simplification} & \multirow{5}{=}{LIME (Local Interpretable Model-agnostic Explanations)} & \multirow{5}{=}{Make complex models more understandable by approximating them with simpler, inherently interpretable models} \\
+        & & \\
+        & & \\
+        & & \\
+        & & \\
+        \hline
+        \multirow{3}{=}{Visual Explanations} & \multirow{3}{=}{Saliency Maps} & \multirow{3}{=}{Provide graphical representations of a model's decision-making process} \\
+        & & \\
+        & & \\
+        \hline
+        \multirow{4}{=}{Model-based Interpretations} & \multirow{4}{=}{Ablation Studies} & \multirow{4}{=}{Understanding the internal mechanisms and learned representations within the network itself} \\
+        & & \\
+        & & \\
+        & & \\
+        \hline
+    \end{tabular}
+    \caption{Summary of Post-Hoc XAI Methodologies}
+    \label{tab:xai_taxonomy}
+\end{table}
 
 \section{Explainable AI in Action: Bridging the Gap to Neuroscience}
 

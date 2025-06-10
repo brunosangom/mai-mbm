@@ -12,6 +12,13 @@ The essay is structured as follows: \textbf{Part I} will begin with a historical
 
 The foundational period of AI, spanning from the 1940s to the 1960s, was marked by pioneering efforts to conceptualize and model neural processes mathematically. A seminal contribution during this era was the \textbf{McCulloch-Pitts neuron}, introduced in 1943 \cite{mcculloch1943logical}. This model presented a simplified, logical abstraction of a biological neuron, proposing that neurons could be understood as computational units performing logical operations. Although a simplification of true neuronal complexity, the McCulloch-Pitts neuron was a groundbreaking concept. It laid crucial groundwork for both the nascent field of AI, by suggesting that machines could, in principle, perform tasks analogous to human thought, and for computational Neuroscience, by providing a formal framework to begin modeling neural activity and networks.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{figures/mcculloch-pitts-neuron.png}
+    \caption{The McCulloch-Pitts neuron model, illustrating the basic structure and function of a simplified neuron (\href{https://www.analyticsvidhya.com/blog/2024/07/mcculloch-pitts-neuron/}{link to illustration source}).}
+    \label{fig:mcculloch-pitts-neuron}
+\end{figure}
+
 Building on the idea of interconnected processing units, Donald Hebb, in his influential 1949 work, \textbf{The Organization of Behavior} \cite{hebb1949organization}, proposed a mechanism for learning in the brain. His famous postulate, often summarized as ``\textit{neurons that fire together, wire together}'', introduced the concept of synaptic plasticity. Hebbian learning suggested that the strength of a connection between two neurons increases when they are activated simultaneously. This principle was profoundly influential, offering a plausible biological basis for how learning and memory could arise from neural activity and directly inspiring early learning algorithms in artificial neural networks. It provided a dynamic element to the static connections of earlier models, suggesting how networks could adapt and learn from experience.
 
 Furthering the development of learning machines, Frank Rosenblatt introduced the \textbf{Perceptron} in 1958 \cite{rosenblatt1958perceptron}. The Perceptron was a more concrete implementation of a learning neural network, capable of learning to classify patterns by adjusting its synaptic weights based on errors. This invention generated considerable excitement, as it demonstrated a machine that could learn from data and perform pattern recognition tasks, a key aspect of intelligence. The Perceptron's architecture and learning rule were seen as analogous to early models of sensory processing in the brain, particularly in how simple features might be detected and combined to recognize more complex stimuli. It represented a significant step towards building practical AI systems inspired by neural principles.
@@ -20,9 +27,23 @@ Despite these early successes and the initial optimism, the field soon encounter
 
 \section{Connectionism and the Rise of Parallel Distributed Processing (1980s)}
 
-After the AI winter, the 1980s witnessed a significant resurgence of interest in neural networks, largely fueled by the emergence of connectionism and the concept of \textbf{Parallel Distributed Processing} (PDP). Central to this revival was the work of the PDP Research Group, particularly David Rumelhart, Geoffrey Hinton, and James McClelland. Their influential two-volume book, \textit{Parallel Distributed Processing: Explorations in the Microstructure of Cognition} \cite{mcclelland1986parallel}, provided a comprehensive theoretical framework and compelling demonstrations of neural network capabilities. This work emphasized how complex cognitive phenomena could emerge from the parallel interactions of many simple processing units, akin to neurons. Connectionist models proposed that information was not stored in specific locations but \textit{distributed across connections}, and that learning occurred through the modification of these connection strengths. This period also saw the popularization of ideas related to the capabilities of multi-layer networks.
+After the AI winter, the 1980s witnessed a significant resurgence of interest in neural networks, largely fueled by the emergence of connectionism and the concept of \textbf{Parallel Distributed Processing} (PDP). Central to this revival was the work of the PDP Research Group, particularly David Rumelhart, Geoffrey Hinton, and James McClelland. Their influential two-volume book, \textit{Parallel Distributed Processing: Explorations in the Microstructure of Cognition} \cite{mcclelland1986parallel}, provided a comprehensive theoretical framework and compelling demonstrations of neural network capabilities. This work emphasized how complex cognitive phenomena could emerge from the parallel interactions of many simple processing units, akin to neurons. Connectionist models proposed that information was not stored in specific locations but \textit{distributed across connections}, and that learning occurred through the modification of these connection strengths. This period also saw the popularization of ideas related to the capabilities of multi-layer networks, like Multi-Layer Perceptrons (MLPs).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{figures/mlp.png}
+    \caption{Illustration of a Multi-Layer Perceptron (MLP) (\href{https://www.turing.com/kb/explanation-of-deep-neural-network-multilayer-perceptron-deep-q-network}{link to illustration source}).}
+    \label{fig:pdp-model}
+\end{figure}
 
 A critical breakthrough that enabled the practical training of these more complex, multi-layer networks was the popularization and refinement of the \textbf{backpropagation algorithm}, notably described by Rumelhart, Hinton, and Williams in 1986 \cite{rumelhart1986learning}. While the core ideas of backpropagation had been explored earlier by others, their work made it accessible and demonstrated its power. Backpropagation provided an efficient method for calculating the gradient of the error function with respect to the network's weights, allowing for the systematic adjustment of these weights to minimize error. This meant that networks with hidden layers, which were previously difficult to train, could now learn complex input-output mappings. The ability to train multi-layer networks was a game-changer, as these architectures could overcome the limitations of single-layer perceptrons identified by Minsky and Papert, enabling the modeling of non-linear relationships and, consequently, more sophisticated cognitive functions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/backpropagation.png}
+    \caption{Illustration of the backpropagation algorithm, showing how errors are propagated backward through the network to update weights (\href{https://medium.com/@lmpo/backpropagation-the-backbone-of-neural-network-training-64946d6c3ae5}{link to illustration source}).}
+    \label{fig:backpropagation}
+\end{figure}
 
 The advancements in network architectures and training algorithms led to a wave of early applications in cognitive science, where PDP models were used to simulate and offer insights into a variety of human cognitive processes. These early applications, while often simplified, were crucial in \textit{demonstrating the potential of neural networks} as tools for understanding the mind and brain, bridging the gap between abstract computational principles and observable cognitive phenomena \cite{mcclelland1986parallel}.
 
@@ -37,6 +58,20 @@ The new millennium marked the beginning of a new era for AI, largely characteriz
 
 Among the most influential Deep Learning architectures for Neuroscience have been \textbf{Convolutional Neural Networks} (CNNs). Initially inspired by the hierarchical processing observed in the mammalian visual cortex, CNNs have demonstrated remarkable success in computer vision tasks. These networks typically consist of multiple layers, including: convolutional layers, that apply filters to input images to detect features; pooling layers, that reduce dimensionality; and fully connected layers, that perform classification. The hierarchical nature of CNNs, where early layers learn simple features (like edges and textures), and deeper layers learn more complex and abstract representations (like object parts or even whole objects), bears a striking resemblance to the processing stages in the primate visual pathway \cite{yamins2016using}. This architectural similarity has made CNNs \textit{invaluable tools for modeling the visual cortex}. Neuroscientists have used them not only to predict neural responses to visual stimuli with unprecedented accuracy but also to generate hypotheses about how visual information is represented and transformed in the brain \cite{kriegeskorte2018cognitive, savage2019how}. By comparing the internal representations of CNNs trained on visual tasks with neural recordings from different stages of the visual system, researchers have found compelling correspondences, suggesting that these artificial models might capture fundamental principles of biological vision.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/cnn.png}
+    \caption{Illustration of a Convolutional Neural Network (CNN) architecture (\href{https://developersbreach.com/convolution-neural-network-deep-learning/}{link to illustration source}).}
+    \label{fig:cnn-architecture}
+\end{figure}
+
 Similarly, \textbf{Recurrent Neural Networks} (RNNs) have provided powerful models for understanding how the brain processes sequential data, such as language or temporal patterns in sensory input. Unlike feedforward networks like CNNs, RNNs possess connections that loop back on themselves, allowing them to maintain an internal state or ``memory'' of past inputs. This characteristic makes them well-suited for tasks where context and temporal dependencies are crucial. The ability of RNNs, particularly variants like Long Short-Term Memory (LSTM) networks and Gated Recurrent Units (GRUs) which can learn long-range dependencies, to capture complex temporal dynamics has made them instrumental in exploring the neural mechanisms underlying time-sensitive cognitive processes \cite{richards2019deep}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{figures/rnn.png}
+    \caption{Illustration of a Recurrent Neural Network (RNN) architecture (\href{https://www.analyticsvidhya.com/blog/2022/03/a-brief-overview-of-recurrent-neural-networks-rnn/}{link to illustration source}).}
+    \label{fig:rnn-architecture}
+\end{figure}
 
 \clearpage
