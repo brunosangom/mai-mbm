@@ -2,4 +2,5 @@
 !*/*.tex
 !*/*.pdf
 !*/*.bib
+!*/parts/
 internal/
