@@ -39,24 +39,70 @@
     {\large \today \par}
 \end{titlepage}
 
+Instruction: This is a personal essay, so it will be written in the first person. Still, it will maintain an academic tone and structure.
+
 \section{Introduction}
 
+Introduce the topic of the essay, which is the comparison of Essays 1~\cite{essay1} and 2~\cite{essay2}, where the first was written by me (a human) and the second was written by an LLM. Mention the purpose of the comparison, which is to analyze the differences in both approaches, strong and weak points of both, and overall quality.
 
+Lay out the structure of the essay, which will include sections on the writing process, prompting strategy, comparison of results, advantages and disadvantages, and conclusion.
 
-\section{Prompting Strategy}
+\section{Essay 1: Writing Process}
 
+Summarize the process of writing Essay 1~\cite{essay1}, which included:
+\begin{itemize}
+    \item Researching different topics related to the intersection of AI and neuroscience. The original title of the essay was "Reverse-Engineering the Brain through Explainable AI", but the truth is that there are not enough papers that explicitly use XAI to better understand the brain, so I had to change the topic to a more general one, but I still tried to focus on the usability of AI as a means to understand the brain (and the XAI aspect).
+    \item Drafting a timeline for the historical review part of the essay (Part 1).
+    \item Research how XAI addresses the black box dilemma and how XAI is used to understand the brain.
+    \item Research the state of the art in AI and how it can be applied or related to neuroscience.
+    \item Research challenges, limitations and ethical considerations of using AI in neuroscience.
+    \item Gathering all the information and writing the essay, which was a long process that took several days.
+\end{itemize}
 
+\section{Essay 2: Prompting Strategy}
 
-\section{Comparison of the Results}
+Explain that I set as my main goal to have an LLM write an essay as similar as possible to mine in one single prompt. For this, I tried different prompting strategies until I got a satisfactory result.
 
+\begin{itemize}
+    \item First, I gave Grok the PDF of my essay and asked it to write an essay as similar as possible to mine, but it was not able to do so. It correctly conserved the structure, but each section was just a brief summary of mine.
+    \item Then, I tried the same with Gemini 2.5 Pro, and the result was astonoishingly good. It was able to write an essay that was very similar to mine, in both structure, content, style and even formatting. This is when I realized that Gemini 2.5 Pro is really powerful, and that I did not really wanted to test if it was capable of simply replicating an already written essay. Instead, what I really wanted to study was whether the LLM would be capable of writing an entire complex essay like mine from a simple prompt that would not require the user to perform all of the previous research and writing process that I did in order to get Essay 1 in the first place.
+    \item For this reason, the prompt that I ended up using was the following:
+    \begin{quote}
+        Write a very detailed essay (10-15 pages) with the title "From Neural Inspiration to Neural Explanation: The Symbiotic Journey of AI and Neuroscience". You should cover:
+        \begin{itemize}
+            \item a historical review of the joint evolution of AI and Neuroscience
+            \item an analysis on Explainable AI and how it connects to Neuroscience
+            \item the current state of the art in Explainable AI for Neuroscience and its challenges, limitations and ethical considerations
+        \end{itemize}
+        Write it in LaTeX.
+    \end{quote}
+    This way, I gave it an outline of the structure of the essay, but I did not give it any specific information about the content, so it had to generate everything from scratch. The only modifications I made to the output were to add the title page and to change the font and page formatting, both for consistency with Essays 1 and 3. The final result was Essay 2~\cite{essay2}, an essay that was similar enough to mine, but with some differences in the content and style.
+\end{itemize}
 
+\section{Comparative Analysis}
 
-\section{Advantages and Disadvantages}
+Introduce that in this section I will compare both essays, focusing especially on the differences in the writing process and the resulting quality of the essays.
+
+For the comparison of the writing process, mention the following points:
+\begin{itemize}
+    \item For Essay 1, I spent several days researching and writing the essay, which was a long and complex process. I had to gather information from different sources, analyze it, and synthesize it into a coherent essay. This process was time-consuming and required a lot of effort, but it also allowed me to learn a lot about the topic and to develop my own ideas and arguments.
+    \item For Essay 2, I spent a few hours experimenting with different prompting strategies and finally writing the prompt that I used to generate the essay. The process was much faster and easier. In this case, I did not have to do any research or writing, as the LLM generated the entire essay from scratch, so I believe that if I hadn't already done the research for Essay 1, I would not have learnt as much about the topic as I did.
+\end{itemize}
+
+For the comparison of the resulting quality of the essays, mention the following points:
+\begin{itemize}
+    \item Essay 1 is a well-structured and coherent essay that covers the topic in depth. It includes a historical review of the joint evolution of AI and neuroscience, an analysis of explainable AI and how it connects to neuroscience, and a discussion of the current state of the art in explainable AI for neuroscience and its challenges, limitations and ethical considerations. The essay is well-written and easy to read, with a clear argumentation and a good use of sources.
+    \item Essay 2 is also a well-structured and coherent essay that covers the same topics as Essay 1. It has a more thorough structure, with a more detailed historical review. It keeps constant alignment with the topic: for each point that it makes, it explains how it relates to both AI and Neuroscience. This is not intrinsically positive or negative, is simply goes to show that the LLM is only able to generate content that is relevant to the prompt, and that it does not have the same degree of freedom (to choose what to include and to leave its personal imprint) as a human writer. The essay is very well-written and easy to read, with a more formal tone than the one I used. However there are 2 critical issues that, in my opinion, are enough to warrant the need of human supervision: some of the references are not real, the model simply created plausible hallucinations; and it does not include any illustrative figures, which help to understand the concepts and make the essay more engaging. This is a limitation of the LLM, as it is not able to generate nor gather figures or images from the internet.
+\end{itemize}
+
+All in all, it is hard to deny that the quality-effort tradeoff leans more to the benefit of the LLM, as it is able to generate a high-quality essay in a fraction of the time and effort that it would take a human to do so. However, the a human ``supervisor'' is needed (for now) to achieve a high-quality result, as AI still has technical and creative limitations. LLMs are incredibly powerful tools to assist in the writing process, and it would be as absurd not to use them as it would be not to use Google, but they should not be relied upon to undertake completely independent work without human oversight.
 
 
 \section{Conclusion}
 
+Summarize the main points of the essay, highlighting the differences in the writing process and the resulting quality of the essays. Emphasize that while LLMs can generate high-quality essays in a fraction of the time and effort that it would take a human to do so, they still require human supervision to achieve a truly high-quality result.
 
+The final conclusion should be that if we are only chasing a high-quality result, then the LLM with minimal human supervision is the way to go. Therefore, the process of ``manually crafting'' a piece of text, such as a research essay like this one, has gained a deeper value than it had before the success of LLMs: it is truly a voluntary process that we undertake to learn and develop our own original ideas and arguments, rather than a mere means to an end.
 
 \clearpage
 \nocite{*}
