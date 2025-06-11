@@ -5,9 +5,8 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{graphicx}
-\usepackage[margin=1in]{geometry} % Adjust margins for page count
+\usepackage[margin=3cm]{geometry} % Adjust margins for page count
 \usepackage{hyperref}
-\usepackage{times} % Using Times font for a more traditional academic look
 \usepackage{setspace} % For line spacing
 \usepackage{tocloft} % For table of contents customization
 \usepackage{parskip} % Non-indented paragraphs with space between them
@@ -43,6 +42,8 @@
     {\large \today \par}
 \end{titlepage}
 
+% Disable page count for title, abstract, and ToC pages
+\pagenumbering{gobble}
 \maketitle
 \begin{abstract}
 The relationship between Artificial Intelligence (AI) and Neuroscience is one of the most profound and enduring intellectual partnerships in modern science. Born from a shared curiosity about the mechanisms of intelligence, these fields have embarked on a symbiotic journey, oscillating between periods of close collaboration and independent exploration. Initially, neuroscience provided the primary inspiration for AI, with early computational models directly attempting to emulate neural structures. As AI evolved, particularly with the advent of deep learning, it has not only achieved remarkable engineering feats but has also offered increasingly sophisticated tools and conceptual frameworks for understanding the brain itself. This essay charts the historical co-evolution of AI and neuroscience, from early biologically-inspired models to the current era where advanced AI systems serve as testbeds for neuroscientific theories. We then delve into the burgeoning field of Explainable AI (XAI), examining its critical role in bridging the gap between complex AI models and human understanding, and how these methodologies are being adapted and applied to unravel the intricate workings of biological neural circuits. The current state-of-the-art in XAI for neuroscience is explored, highlighting its potential to transform our comprehension of neural computation, alongside a critical analysis of its inherent challenges, limitations, and the pressing ethical considerations that accompany this powerful new frontier. Ultimately, we argue that the journey from neural inspiration to neural explanation represents a maturing of the AI-neuroscience relationship, poised to unlock deeper insights into both artificial and biological intelligence.
@@ -51,6 +52,7 @@ The relationship between Artificial Intelligence (AI) and Neuroscience is one of
 \clearpage
 \tableofcontents
 \clearpage
+\pagenumbering{arabic}
 
 % \onehalfspacing % 1.5 line spacing for readability
 
